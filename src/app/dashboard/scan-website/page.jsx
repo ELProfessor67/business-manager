@@ -28,16 +28,17 @@ const page = () => {
     }
     return (
         <div>
-            <h1>Lighthouse Scanner</h1>
+            <h1>Website Scanner</h1>
             <label>
                 Enter Website URL:
                 <input
                     type="text"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
+                    className='border border-gray-600 rounded-md'
                 />
             </label>
-            <button onClick={handleScan}>Scan</button>
+            <button onClick={handleScan} className='ml-4 rounded-md bg-indigo-600 py-2 px-4 text-white'>Scan</button>
 
             {report && (
                 <div>
