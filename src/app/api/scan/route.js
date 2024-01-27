@@ -6,7 +6,6 @@ export async function POST(req) {
   const { url } = await req.json();
 
   try {
-    console.log(process.env.CHROME_PATh)
     // const command = `npx lighthouse ${url} --output=json --only-categories=performance --chrome-flags="--headless"`;
     const command = `npx lighthouse ${url} --output=json --only-categories=performance --chrome-flags="--headless --no-sandbox" --chrome-path="${process.env.CHROMIUM_PATH}"`;
     let result = execSync(command, { encoding: 'utf-8' });
