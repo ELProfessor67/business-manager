@@ -1,18 +1,18 @@
 #!/bin/bash
+
 # Function to install Chromium based on the OS
 install_chromium() {
-  OS=$(lsb_release -si 2>/dev/null || echo "unknown")
-
-  case "$OS" in
-    Ubuntu)
-      sudo apt update
-      sudo apt install -y chromium-browser
-      ;;
-    *)
-      echo "Unsupported operating system: $OS"
-      exit 1
-      ;;
-  esac
+  if command -v apt &> /dev/null; then
+    # Debian/Ubuntu
+    sudo apt update
+    sudo apt install -y chromium-browser
+  elif command -v yum &> /dev/null; then
+    # Fedora
+    sudo yum install -y chromium
+  else
+    echo "Unsupported package manager. Please install Chromium manually."
+    exit 1
+  fi
 }
 
 # Install Chromium
@@ -27,7 +27,6 @@ source ~/.bashrc
 
 # Display a message
 echo "Chromium installed and CHROMIUM_PATH environment variable set to: $CHROMIUM_PATH"
-
 
 # nextjs build
 yarn install
