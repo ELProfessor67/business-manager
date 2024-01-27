@@ -32,3 +32,9 @@ body
 {
     display: none !important;
 }
+
+.lh-vars
+{
+    --report-text-color: grey
+     !important;
+}
