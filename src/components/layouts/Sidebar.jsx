@@ -10,6 +10,7 @@ import { MdSms, MdStarRate, MdDashboard, MdScanner } from "react-icons/md";
 import { SiSimpleanalytics } from "react-icons/si";
 import { usePathname } from 'next/navigation';
 import { MdQrCodeScanner } from "react-icons/md";
+import { VscSymbolKeyword } from "react-icons/vsc";
 
 
 const sidebarOpetion = {
@@ -89,6 +90,11 @@ const MenuItemsData = [
         name: 'Scan Website',
         icons: <MdQrCodeScanner size={25} color='#2b85de' />,
         href: '/dashboard/scan-website'
+    },
+    {
+        name: 'Keyword Scanner',
+        icons: <VscSymbolKeyword size={25} color='#2b85de' />,
+        href: '/dashboard/keyword-scanner'
     },
 
 ]

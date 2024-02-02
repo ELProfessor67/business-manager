@@ -11,6 +11,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.1",
     "axios": "^1.6.5",
+    "cheerio": "^1.0.0-rc.12",
     "chrome-launcher": "^1.1.0",
     "lighthouse": "^11.5.0",
     "lighthouse-viewer": "^0.1.235",
